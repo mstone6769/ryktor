@@ -34,6 +34,8 @@
     spellcheck="false"
     autocomplete="off"
     autocapitalize="off">
+  <label for="CustomerFormAllergies">Allergies</label>
+  <input type="text" id="CustomerFormAllergies" name="customer[note][Allergies]" placeholder="Allergies">
 
   <label for="CreatePassword" class="label-hidden">
     {{ 'customer.register.password' | t }}
@@ -43,7 +45,7 @@
     id="CreatePassword"
     class="{% if form.errors contains 'password' %}input-error{% endif %}"
     placeholder="{{ 'customer.register.password' | t }}">
-
+  
   <p>
     <input type="submit" value="{{ 'customer.register.submit' | t }}" class="button">
   </p>
