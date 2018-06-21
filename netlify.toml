@@ -1,4 +1,4 @@
 [build]
   base    = "splash"
-  publish = "site"
+  publish = "build"
   command = "make"
