@@ -3,6 +3,7 @@
   "main": "./index.js",
   "private": false,
   "dependencies": {
+    "basscss": "^8.0.2",
     "metalsmith": "^2.1.0",
     "metalsmith-html-minifier": "^3.0.0",
     "metalsmith-sass": "^1.5.1"
