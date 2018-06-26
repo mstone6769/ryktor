@@ -1,9 +1,52 @@
 @charset 'UTF-8';
 
 /**
- * [replace with theme name] | Built with Slate
+ * Ryktor Theme | Built with Slate
  */
-@import '~normalize.css/normalize';
+
+ @font-face {
+  font-family: 'Norwester';
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  src: url('~fonts/norwester.eot'); /* IE9 Compat Modes */
+  src: url('~fonts/norwester.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~fonts/norwester.woff') format('woff'), /* Pretty Modern Browsers */
+       url('~fonts/norwester.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('~fonts/norwester.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+ :root {
+  --font-heading: 'Norwester', sans-serif;
+  --font-body: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+}
+
+
+body { margin: 0; font-family: var(--font-body) }
+img { max-width: 100% }
+svg { max-height: 100% }
+
+
+
+$aqua: #7fdbff !default;
+$blue: #336699 !default;
+$navy: #001f3f !default;
+$teal: #33CC99 !default;
+$green: #6f0 !default;
+$olive: #3d9970 !default;
+$lime: #6f0 !default;
+$yellow: #ffdc00 !default;
+$orange: #ff851b !default;
+$red: #33CC99 !default;
+$fuchsia: #f012be !default;
+$purple: #990099 !default;
+$maroon: #85144b !default;
+$white: #fff !default;
+$silver: #ccc !default;
+$gray: #666 !default;
+$black: #111 !default;
+
+// @import '~normalize.css/normalize';
 
 // Settings
 @import './variables';
@@ -15,7 +58,6 @@
 // Core
 @import './core/forms';
 @import './core/helpers';
-@import './core/layout';
 @import './core/media';
 @import './core/responsive-tables';
 @import './core/rte';
@@ -28,7 +70,47 @@
 @import './components/placeholders';
 @import './components/responsive-images';
 
+@import "~basscss-sass/scss/forms";
+
+@import "~basscss-sass/scss/type-scale";
+@import "~basscss-sass/scss/typography";
+@import "~basscss-sass/scss/layout";
+@import "~basscss-sass/scss/align";
+
+@import "~basscss-sass/scss/grid";
+
+@import "~basscss-sass/scss/position";
+@import "~basscss-sass/scss/border";
+
+
+@import "~basscss-sass/scss/all";
+.bg-transparent  { background-color: transparent }
+@import "~basscss-sass/scss/background-colors";
+@import "~basscss-sass/scss/background-images";
+// @import "~basscss-sass/scss/border-colors";
+// @import "~basscss-sass/scss/btn-outline";
+// @import "~basscss-sass/scss/btn-primary";
+// @import "~basscss-sass/scss/btn";
+@import "~basscss-sass/scss/colors";
+// @import "~basscss-sass/scss/darken";
+// @import "~basscss-sass/scss/highlight-dark";
+// @import "~basscss-sass/scss/highlight";
+// @import "~basscss-sass/scss/input-range";
+// @import "~basscss-sass/scss/lighten";
+// @import "~basscss-sass/scss/media-object";
+// @import "~basscss-sass/scss/progress";
+// @import "~basscss-sass/scss/responsive-margin";
+// @import "~basscss-sass/scss/responsive-padding";
+
+@import "~basscss-sass/scss/margin";
+@import "~basscss-sass/scss/padding";
+@import "~basscss-sass/scss/flexbox";
+@import "~basscss-sass/scss/hide";
+
 // Sections
+
+@import './core/layout';
+
 @import './sections/blog-posts';
 @import './sections/collection-list';
 @import './sections/featured-collection';
@@ -37,3 +119,4 @@
 // Templates
 @import './templates/gift_card';
 @import './templates/product';
+

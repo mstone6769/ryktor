@@ -7,6 +7,7 @@
     {{ 'customer.register.first_name' | t }}
   </label>
   <input type="text"
+    class="input"
     name="customer[first_name]"
     id="FirstName"
     placeholder="{{ 'customer.register.first_name' | t }}"
@@ -17,6 +18,7 @@
     {{ 'customer.register.last_name' | t }}
   </label>
   <input type="text"
+    class="input"
     name="customer[last_name]"
     id="LastName"
     placeholder="{{ 'customer.register.last_name' | t }}"
@@ -28,14 +30,15 @@
   <input type="email"
     name="customer[email]"
     id="Email"
-    class="{% if form.errors contains 'email' %}input-error{% endif %}"
+    class="input {% if form.errors contains 'email' %}input-error{% endif %}"
     placeholder="{{ 'customer.register.email' | t }}"
     value="{% if form.email %}{{ form.email }}{% endif %}"
     spellcheck="false"
     autocomplete="off"
     autocapitalize="off">
   <label for="CustomerFormAllergies">Allergies</label>
-  <input type="text" id="CustomerFormAllergies" name="customer[note][Allergies]" placeholder="Allergies">
+  <input type="text"
+    class="input" id="CustomerFormAllergies" name="customer[note][Allergies]" placeholder="Allergies">
 
   <label for="CreatePassword" class="label-hidden">
     {{ 'customer.register.password' | t }}
@@ -43,8 +46,9 @@
   <input type="password"
     name="customer[password]"
     id="CreatePassword"
-    class="{% if form.errors contains 'password' %}input-error{% endif %}"
+    class="input {% if form.errors contains 'password' %}input-error{% endif %}"
     placeholder="{{ 'customer.register.password' | t }}">
+  
   
   <p>
     <input type="submit" value="{{ 'customer.register.submit' | t }}" class="button">

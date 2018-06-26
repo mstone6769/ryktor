@@ -15,13 +15,26 @@ html {
 }
 
 
-.site-header {
-  background-color: #eee;
-  color: white;
-  ul {
-    list-style: none;
-    > li {
-      float: left;
-    }
+.site-logo {
+  width: 90px;
+  height: 90px;
+}
+
+.site-nav {
+  margin-left: 80px;
+}
+
+.site-search {
+  background-color: rgba(white, 0.1);
+  border-radius: 5px;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  margin-right: 0.5rem !important;
+
+  .input {
+    border-color: transparent;
+    height: 2rem;
+    font-size: 0.85rem;
+
   }
 }
