@@ -34,6 +34,14 @@
   <h1>{{ product.title }}</h1>
   <p>{{ product.vendor }}</p>
 
+  {% for order in customer.orders %}
+    {% for line_item in order.line_items %}      
+      {% if line_item.product_id == product.id %}
+        <h1>I've been bought before</h1>
+      {% endif %}	
+    {% endfor %}
+  {% endfor %}
+
 
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     {% unless product.has_only_default_variant %}

@@ -82,7 +82,7 @@
           {% endif %}
         </li>
         <li class="flex items-center">
-          {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          {{ 'layout.customer.log_out' | t | customer_logout_link | replace: 'href', 'class="button button-primary bg-transparent py2" href' }}
         </li>
       {% else %}
         <li class="flex items-center">
