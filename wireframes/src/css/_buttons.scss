@@ -1,0 +1,11 @@
+.btn {
+  text-transform: lowercase;
+  font-family: $headings-font-family;
+  font-size: 1.25rem;
+}
+
+.btn-primary:hover {
+  color: #666;
+  background-color: white;
+  border-color: white;
+}
