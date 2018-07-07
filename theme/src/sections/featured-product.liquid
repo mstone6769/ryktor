@@ -12,8 +12,8 @@
   {% if featured_image.src != blank %}
     {% include 'responsive-image' with
       image: featured_image,
-      max_width: 700,
-      max_height: 800
+      max_width: 1600,
+      max_height: 640
     %}
   {% endif %}
 
@@ -35,7 +35,6 @@
   {% endif %}
 
   <div>
-
     <form action="/cart/add" method="post" enctype="multipart/form-data">
       {% unless product.has_only_default_variant %}
         {% for option in product.options_with_values %}
@@ -71,9 +70,10 @@
         {% endfor %}
       </select>
 
-      <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-      <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1">
-
+      <div style="display: none;">
+        <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+        <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1">
+      </div>
       <div data-price-wrapper>
         <span data-product-price>
           {{ current_variant.price | default: '1999' | money }}
@@ -90,6 +90,7 @@
       </div>
 
       <button
+        class="button"
         type="submit"
         name="add"
         data-add-to-cart
