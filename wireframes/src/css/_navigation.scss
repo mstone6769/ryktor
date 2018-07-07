@@ -1,0 +1,33 @@
+
+
+// .navbar-expand {
+//   @each $breakpoint in map-keys($grid-breakpoints) {
+//     $next: breakpoint-next($breakpoint, $grid-breakpoints);
+//     $infix: breakpoint-infix($next, $grid-breakpoints);
+
+//     &#{$infix} {
+
+//       @include media-breakpoint-up($next) {
+
+//         .navbar-nav {
+
+//           .nav-link {
+//             padding-right: 1.5rem;
+//             padding-left: 1.5rem;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+.nav-link {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  text-transform: lowercase;
+  color: white;
+  font-size: 1.25rem;
+}
+
+
