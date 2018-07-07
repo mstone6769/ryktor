@@ -31,3 +31,20 @@
 }
 
 
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear, background-color 200ms linear;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+  &.headroom--not-top {
+    background-color: rgba(black, 0.5);
+  }
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
