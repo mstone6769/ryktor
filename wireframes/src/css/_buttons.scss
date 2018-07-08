@@ -1,7 +1,10 @@
 .btn {
   text-transform: lowercase;
   font-family: $headings-font-family;
-  font-size: 1.25rem;
+}
+
+.btn-circle {
+  border-radius: 30px;
 }
 
 .btn-primary:hover {

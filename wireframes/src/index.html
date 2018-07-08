@@ -22,6 +22,7 @@
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
   </style>
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -33,46 +34,224 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-      <a class="navbar-brand" href="#">
-        <img src="ryktor-logo.svg" alt="Ryktor" width="44" height="44">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link px-lg-3" href="#">Past Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-lg-3" href="#">Upcoming Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-lg-3" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-lg-3" href="#">Contact Us</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link px-lg-3" href="#">Login</a>
-          </li>
-        </ul>
-        <a class="btn btn-primary" href="#">Create Account</a>
-      </div>
-    </nav>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <a class="navbar-brand" href="#">
+          <img src="ryktor-logo.svg" alt="Ryktor" width="44" height="44">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link px-lg-3" href="#">Past Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3" href="#">Upcoming Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link px-lg-3" href="#">Login</a>
+            </li>
+          </ul>
+          <a class="btn btn-primary btn-circle" href="#">Create Account</a>
+        </div>
+      </nav>
+    </div>
   </header>
   <main class="site-main">
-    <section class="hero px-2 d-flex align-items-center">
-      <h1 class="display-1 text-white">be heard</h1>
+    <section class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="px-3 text-white">
+          <h1 class="display-3">be heard</h1>
+          <p class="lead lh-180">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur rutrum aliquet. Maecenas ultrices libero quis imperdiet luctus.</p>
+        </div>
+      </div>
+    </section>
+    <section class="py-3 py-lg-5">
+      <div class="container">
+        <h2 class="h4 mb-3 text-light">Trending</h2>
+        <ul class="videos list-unstyled">
+          <li>
+            <div class="video-container position-relative overflow-hidden">
+              <div class="video">
+                <img class="img-fluid" src="http://via.placeholder.com/1600x900" alt="video">
+              </div>
+              <span class="icon-play">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+                </span>  
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="video-container position-relative overflow-hidden">
+              <div class="video">
+                <img class="img-fluid" src="http://via.placeholder.com/1600x900" alt="video">
+              </div>
+              <span class="icon-play">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+                </span>  
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="video-container position-relative overflow-hidden">
+              <div class="video">
+                <img class="img-fluid" src="http://via.placeholder.com/1600x900" alt="video">
+              </div>
+              <span class="icon-play">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+                </span>  
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="video-container position-relative overflow-hidden">
+              <div class="video">
+                <img class="img-fluid" src="http://via.placeholder.com/1600x900" alt="video">
+              </div>
+              <span class="icon-play">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+                </span>  
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="py-3 py-lg-5">
+        <div class="container">
+            <div class="mb-md text-center">
+                <h3 class="heading h3">Subscribe for weekly news</h3>
+                <div class="fluid-paragraph text-center mt-4">
+                    <p class="lead lh-180">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur rutrum aliquet. Maecenas ultrices libero quis imperdiet luctus.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your email address">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-block btn-primary">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
   </main>
-  <footer class="site-footer">
-    Copyright &copy; 2018 Ryktor
+  <footer class="footer py-5  footer-dark">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="pr-lg-4">
+                      <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Contact</h5>
+                      <ul class="list-unstyled text-small">
+                          <li class="d-flex py-2">
+                              <div>
+                                <i class="fa fa-map-marker fa-w-12"></i>
+                              </div>
+                              <div>
+                                  <span class="pl-3 d-inline-block">Ryktor<br>
+                    Birmingham, AL</span>
+                              </div>
+                          </li>
+                          <li class="d-flex py-2">
+                              <div>
+                                  <i class="fa fa-phone fa-w-16"></i>
+                                </div>
+                              <div>
+                                  <span class="pl-3 d-inline-block">205-xxx-xxxx</span>
+                              </div>
+                          </li>
+                          <li class="d-flex py-2">
+                              <div>
+                                <i class="fa fa-envelope-open fa-w-12"></i>
+                              </div>
+                              <div>
+                                  <span class="pl-3 d-inline-block">support@ryktor.com</span>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-2">
+                  <h5 class="heading h6 text-uppercase font-weight-700 mb-3">About us</h5>
+                  <ul class="list-unstyled text-small">
+                      <li class="py-2"><a href="#">Our company</a>
+                      </li>
+                      <li class="py-2"><a href="#">Careers</a>
+                      </li>
+                      <li class="py-2"><a href="#">Project</a>
+                      </li>
+                      <li class="py-2"><a href="#">Services</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-lg-2">
+                  <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Solutions</h5>
+                  <ul class="list-unstyled">
+                      <li class="py-2"><a href="#">Landing pages</a>
+                      </li>
+                      <li class="py-2"><a href="#">UI components</a>
+                      </li>
+                      <li class="py-2"><a href="#">Premium plugins</a>
+                      </li>
+                      <li class="py-2"><a href="#">Bootstrap themes</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-12 col-md-4">
+                  <div class="pr-lg-5">
+                      <h1 class="heading h6 text-uppercase font-weight-700 mb-3"><strong>Purpose</strong> UI Kit</h1>
+                      <ul class="list-unstyled">
+                          <li class="py-2"><a href="#">Terms and conditions</a>
+                          </li>
+                          <li class="py-2"><a href="#">Privacy policy</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <hr class="my-5">
+      <div class="container">
+          <div class="align-items-center">
+              <div class="text-center">
+                  <span class="d-block mt-4">&copy; 2018 Ryktor. All rights reserved.</span>
+              </div>
+          </div>
+      </div>
   </footer>
+  <svg style="display: none">
+      <symbol id="play" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="50"/>
+        <polygon fill="#FFFFFF" points="31,18.062 86.939,50.359 31,82.656 "/>
+      </symbol>
+    </svg>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>

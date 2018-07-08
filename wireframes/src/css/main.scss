@@ -13,6 +13,8 @@ $body-color: #666;
        url('./fonts/norwester.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+$font-size-base: 1.25rem;
+
 $font-family-sans-serif: "Avenir", "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
 
 $headings-font-family: 'Norwester', sans-serif;
@@ -53,7 +55,7 @@ $nav-link-padding-x: 5rem;
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/images";
 // @import "node_modules/bootstrap/scss/code";
-// @import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/grid";
 // @import "node_modules/bootstrap/scss/tables";
 @import "node_modules/bootstrap/scss/forms";
 @import "node_modules/bootstrap/scss/buttons";
@@ -101,3 +103,6 @@ html {
 @import 'hero';
 @import 'layout';
 @import 'buttons';
+@import 'videos';
+@import 'typography';
+@import 'icons';
