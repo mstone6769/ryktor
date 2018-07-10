@@ -33,7 +33,7 @@
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/896286acb754450c870ccb9aa/ddbe39aaa55822ce151147d7e.js");</script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 max-width-5 mx-auto px-0">
       <a class="navbar-brand px-3" href="#">
         <img src="ryktor-logo.svg" alt="Ryktor" width="44" height="44">
@@ -200,38 +200,53 @@
               </div>
               <div class="col-lg-2">
                   <h5 class="heading h6 text-uppercase font-weight-700 mb-3">About us</h5>
-                  <ul class="list-unstyled text-small">
-                      <li class="py-2"><a href="#">Our company</a>
+                  <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="text-light text-decoration-none py-2 d-block active" href="#">Active</a>
                       </li>
-                      <li class="py-2"><a href="#">Careers</a>
+                      <li class="nav-item">
+                        <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
                       </li>
-                      <li class="py-2"><a href="#">Project</a>
+                      <li class="nav-item">
+                        <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
                       </li>
-                      <li class="py-2"><a href="#">Services</a>
+                      <li class="nav-item">
+                        <a class="text-light text-decoration-none py-2 d-block disabled" href="#">Disabled</a>
                       </li>
-                  </ul>
+                    </ul>
               </div>
               <div class="col-lg-2">
                   <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Solutions</h5>
-                  <ul class="list-unstyled">
-                      <li class="py-2"><a href="#">Landing pages</a>
-                      </li>
-                      <li class="py-2"><a href="#">UI components</a>
-                      </li>
-                      <li class="py-2"><a href="#">Premium plugins</a>
-                      </li>
-                      <li class="py-2"><a href="#">Bootstrap themes</a>
-                      </li>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="text-light text-decoration-none py-2 d-block" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="text-light text-decoration-none py-2 d-block disabled" href="#">Disabled</a>
+                    </li>
                   </ul>
               </div>
               <div class="col-12 col-md-4">
                   <div class="pr-lg-5">
-                      <h1 class="heading h6 text-uppercase font-weight-700 mb-3"><strong>Purpose</strong> UI Kit</h1>
-                      <ul class="list-unstyled">
-                          <li class="py-2"><a href="#">Terms and conditions</a>
-                          </li>
-                          <li class="py-2"><a href="#">Privacy policy</a>
-                          </li>
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="text-light text-decoration-none py-2 d-block" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="text-light text-decoration-none py-2 d-block" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="text-light text-decoration-none py-2 d-block disabled" href="#">Disabled</a>
+                        </li>
                       </ul>
                   </div>
               </div>
@@ -246,19 +261,13 @@
           </div>
       </div>
   </footer>
-  <svg style="display: none">
-      <symbol id="play" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="50"/>
-        <polygon fill="#FFFFFF" points="31,18.062 86.939,50.359 31,82.656 "/>
-      </symbol>
-    </svg>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
   <script src="scripts/headroom.js"></script>
   <script>
     // grab an element
-    var header = document.querySelector("header");
+    var header = document.querySelector(".site-header");
     // construct an instance of Headroom, passing the element
     var headroom  = new Headroom(header);
     // initialise
