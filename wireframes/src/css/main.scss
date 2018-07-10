@@ -1,5 +1,6 @@
 $body-bg: #000;
 $body-color: #666;
+$grid-gutter-width: 2rem;
 
 @font-face {
   font-family: 'Norwester';
@@ -20,30 +21,33 @@ $font-family-sans-serif: "Avenir", "Century Gothic","Apple Gothic",AppleGothic,"
 $headings-font-family: 'Norwester', sans-serif;
 $headings-font-weight: 400;
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$green:   #66FF00;
+$teal:    #33CC99;
+$blue:    #336699;
+$purple:  #990099;
+$orange:  #CC4815;
+
+$gray-700: #333;
+$gray-800: #282828;
+$gray-900: #212529;
+
+
 
 
 $theme-colors: (
-  "primary": #66FF00,
-  "danger": #ff4136
+  "primary": $green,
+  "secondary": $purple
 );
 
 
 $navbar-dark-color:                 white;
-$navbar-dark-hover-color:           rgba(white, .75);
+$navbar-dark-hover-color:           white;
 $navbar-dark-active-color:          white;
 
 $nav-link-padding-x: 5rem;
+$btn-padding-x: 1rem;
 
+$enable-gradients: false;
 
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
@@ -96,6 +100,10 @@ html {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+.bg-gradient-dark {
+  background: $gray-800 linear-gradient(0deg, $gray-800, black) repeat-x !important;
 }
 
 

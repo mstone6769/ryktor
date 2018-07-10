@@ -1,7 +1,11 @@
 .hero {
   padding-top: 70px;
   min-height: 600px;
-  background: url('../images/concert.jpg') top center no-repeat;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('../images/concert.jpg'); /* fallback */
+  background-image: linear-gradient(127deg, rgba($orange, 0.5), rgba($teal, 0.5)), linear-gradient(336deg, rgba($blue, 0.75), rgba($purple, 0.5)), url('../images/concert.jpg'), ; /* W3C */
   background-size: cover;
-  //background-attachment: fixed;
+  background-attachment: fixed, scroll, fixed;
+  background-blend-mode: overlay, overlay, normal;
 }
