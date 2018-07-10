@@ -46,3 +46,14 @@ $items : 4;
   margin-left: -$icon-size/2;
   margin-top: -$icon-size/2;
 }
+
+.card {
+  &:hover, &:focus {
+    .icon-play {
+      color: black;
+    }
+    .fa-inverse {
+      color: $green;
+    }
+  }
+}
