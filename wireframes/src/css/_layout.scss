@@ -1,3 +1,10 @@
+@include media-breakpoint-up(lg) {
+  .navbar-brand img {
+    width: 88px;
+    height: 88px;
+  }
+}
+
 .container-fluid {
   max-width: 1200px;
 }
