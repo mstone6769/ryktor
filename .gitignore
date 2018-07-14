@@ -66,3 +66,5 @@ secrets.json
 .jekyll-metadata
 .ruby-version
 wireframes/build
+wireframes/build/css/main.css
+wireframes/build/index.html

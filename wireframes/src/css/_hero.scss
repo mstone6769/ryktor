@@ -1,6 +1,5 @@
 .hero {
-  padding-top: 70px;
-  min-height: 600px;
+  padding-top: 145px;
   background-position: top center;
   background-repeat: no-repeat;
   background-image: url('../images/concert.jpg'); /* fallback */
@@ -8,4 +7,8 @@
   background-size: cover;
   background-attachment: fixed, scroll, fixed;
   background-blend-mode: overlay, overlay, normal;
+}
+
+.hero-fade {
+  background-image: linear-gradient(transparent, black)
 }

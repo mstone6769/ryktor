@@ -27,6 +27,12 @@ $blue:    #336699;
 $purple:  #990099;
 $orange:  #CC4815;
 
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #666 !default;
 $gray-700: #333;
 $gray-800: #282828;
 $gray-900: #212529;
@@ -48,6 +54,11 @@ $nav-link-padding-x: 5rem;
 $btn-padding-x: 1rem;
 
 $enable-gradients: false;
+
+$input-bg: black;
+$input-color: $gray-300;
+$input-border-color: $gray-700;
+$input-placeholder-color: $gray-500;
 
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
