@@ -1,4 +1,4 @@
 [build]
-  base    = "splash"
-  publish = "splash/build"
+  base    = "wireframes"
+  publish = "wireframes/build"
   command = "make"
