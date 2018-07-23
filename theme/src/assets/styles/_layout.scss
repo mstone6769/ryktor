@@ -1,0 +1,37 @@
+@include media-breakpoint-up(lg) {
+  .navbar-brand img {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+.container-fluid {
+  max-width: 1200px;
+}
+.fluid-paragraph {
+  position: relative;
+  width: 680px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.max-width-1 {
+  max-width: 24rem;
+}
+
+.max-width-2 {
+  max-width: 32rem;
+}
+
+.max-width-3 {
+  max-width: 48rem;
+}
+
+.max-width-4 {
+  max-width: 64rem;
+}
+
+.max-width-5 {
+  max-width: 1200px;
+}
+

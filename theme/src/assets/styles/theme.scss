@@ -4,17 +4,17 @@
  * Ryktor Theme | Built with Slate
  */
 
- @font-face {
-  font-family: 'Norwester';
-  font-weight: 600;
-  font-style: normal;
-  text-transform: uppercase;
-  src: url('~fonts/norwester.eot'); /* IE9 Compat Modes */
-  src: url('~fonts/norwester.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('~fonts/norwester.woff') format('woff'), /* Pretty Modern Browsers */
-       url('~fonts/norwester.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('~fonts/norwester.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
+//  @font-face {
+//   font-family: 'Norwester';
+//   font-weight: 600;
+//   font-style: normal;
+//   text-transform: uppercase;
+//   src: url('~fonts/norwester.eot'); /* IE9 Compat Modes */
+//   src: url('~fonts/norwester.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('~fonts/norwester.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('~fonts/norwester.ttf')  format('truetype'), /* Safari, Android, iOS */
+//        url('~fonts/norwester.svg#svgFontName') format('svg'); /* Legacy iOS */
+// }
 
  :root {
   --font-heading: 'Norwester', sans-serif;
@@ -70,43 +70,124 @@ $black: #111 !default;
 @import './components/placeholders';
 @import './components/responsive-images';
 
-@import "~basscss-sass/scss/forms";
 
-@import "~basscss-sass/scss/type-scale";
-@import "~basscss-sass/scss/typography";
-@import "~basscss-sass/scss/layout";
-@import "~basscss-sass/scss/align";
-
-@import "~basscss-sass/scss/grid";
-
-@import "~basscss-sass/scss/position";
-@import "~basscss-sass/scss/border";
+$body-bg: #000;
+$body-color: #666;
+$grid-gutter-width: 2rem;
 
 
-@import "~basscss-sass/scss/all";
-.bg-transparent  { background-color: transparent }
-@import "~basscss-sass/scss/background-colors";
-@import "~basscss-sass/scss/background-images";
-// @import "~basscss-sass/scss/border-colors";
-// @import "~basscss-sass/scss/btn-outline";
-// @import "~basscss-sass/scss/btn-primary";
-// @import "~basscss-sass/scss/btn";
-@import "~basscss-sass/scss/colors";
-// @import "~basscss-sass/scss/darken";
-// @import "~basscss-sass/scss/highlight-dark";
-// @import "~basscss-sass/scss/highlight";
-// @import "~basscss-sass/scss/input-range";
-// @import "~basscss-sass/scss/lighten";
-// @import "~basscss-sass/scss/media-object";
-// @import "~basscss-sass/scss/progress";
-// @import "~basscss-sass/scss/responsive-margin";
-// @import "~basscss-sass/scss/responsive-padding";
+$font-size-base: 1.25rem;
 
-@import "~basscss-sass/scss/margin";
-@import "~basscss-sass/scss/padding";
-@import "~basscss-sass/scss/flexbox";
-@import "~basscss-sass/scss/hide";
+$font-family-sans-serif: "Avenir", "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
 
+$headings-font-family: 'Norwester', sans-serif;
+$headings-font-weight: 400;
+
+$green:   #66FF00;
+$teal:    #33CC99;
+$blue:    #336699;
+$purple:  #990099;
+$orange:  #CC4815;
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #666 !default;
+$gray-700: #333;
+$gray-800: #282828;
+$gray-900: #212529;
+
+$border-radius: 0;
+
+
+$theme-colors: (
+  "primary": $green,
+  "secondary": $purple
+);
+
+
+$navbar-dark-color:                 white;
+$navbar-dark-hover-color:           white;
+$navbar-dark-active-color:          white;
+
+$nav-link-padding-x: 5rem;
+$btn-padding-x: 1rem;
+
+$enable-gradients: false;
+
+$input-bg: black;
+$input-color: $gray-300;
+$input-border-color: $gray-700;
+$input-placeholder-color: $gray-500;
+
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+// @import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+// @import "~bootstrap/scss/print";
+@import 'owl.carousel.css';
+
+html {
+  /* Adjust font size */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+.bg-gradient-dark {
+  background: $gray-800 linear-gradient(0deg, $gray-800, black) repeat-x !important;
+}
+
+
+@import 'navigation';
+@import 'hero';
+@import 'layout';
+@import 'buttons';
+@import 'videos';
+@import 'typography';
+@import 'icons';
 // Sections
 
 @import './core/layout';

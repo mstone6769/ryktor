@@ -8,14 +8,42 @@ const alias = {
   'fonts': path.resolve('./src/assets/fonts'),
 };
 
+// const plugins = [
+//   new webpack.ProvidePlugin({
+//     $: 'jquery',
+//     jQuery: 'jquery',
+//     'window.jQuery': 'jquery'
+//   }),
+// ];
+
 module.exports = {
   slateCssVarLoader: {
     cssVarLoaderLiquidPath: ['src/snippets/css-variables.liquid'],
   },
   slateTools: {
     extends: {
-      dev: {resolve: {alias}},
-      prod: {resolve: {alias}},
+      dev: {
+        resolve: {alias},
+        module: {
+          rules: [
+            {
+              test: require.resolve('owl.carousel'),
+              use: 'imports-loader?$=jquery,jQuery=jquery',
+            },
+          ],
+        },
+      },
+      prod: {
+        resolve: {alias},
+        module: {
+          rules: [
+            {
+              test: require.resolve('owl.carousel'),
+              use: 'imports-loader?$=jquery,jQuery=jquery',
+            },
+          ],
+        },
+      },
     },
   },
 };
