@@ -12,8 +12,8 @@
 <section class="featured-collection pb-5">
   
   {% if section.settings.title != blank %}
-    <div class="hero-fade pt-5">
-      <h2 class="h4 mx-5 mb-3 text-light hero-fade">{{ section.settings.title | escape }}</h2>
+    <div class="section-header">
+      <h2 class="h4 mx-5 mb-3 text-light">{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
 
@@ -54,7 +54,7 @@
         "type": "text",
         "id": "title",
         "label": "Heading",
-        "default": "Featured collection"
+        "default": "Trending"
       },
       {
         "id": "collection",

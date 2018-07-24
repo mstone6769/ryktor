@@ -7,7 +7,7 @@
   {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
 {% endif %}
 
-<section class="hero" data-section-id="{{ section.id }}" data-section-type="product">
+<section data-section-id="{{ section.id }}" data-section-type="product">
   <div class="d-flex align-items-center">
     <div class="mx-auto px-3 w-100 max-width-2">
       <div class="text-white max-width-2">
@@ -145,22 +145,17 @@
 
 {% schema %}
   {
-    "name": "Featured product",
+    "name": "Featured Video",
     "settings": [
       {
         "type": "product",
         "id": "product",
         "label": "Product"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "Show social sharing buttons"
       }
     ],
     "presets": [
       {
-        "name": "Featured product",
+        "name": "Featured Video",
         "category": "Product"
       }
     ]
