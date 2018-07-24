@@ -8,56 +8,42 @@
   Theme Store optional settings
   - Heading: title of the featured collection section
 {%- endcomment -%}
-<section class="featured-collection">
+  
+<section class="featured-collection pb-5">
+  
   {% if section.settings.title != blank %}
-    <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
+    <div class="hero-fade pt-5">
+      <h2 class="h4 mx-5 mb-3 text-light hero-fade">{{ section.settings.title | escape }}</h2>
+    </div>
   {% endif %}
 
   {%- assign collection = collections[section.settings.collection] -%}
-
-  {% for product in collection.products limit: 6 %}
-    <a href="{{ product.url | within: collection }}" class="featured-collection-item">
-      {% if product.featured_image != blank %}
-        <div class="featured-collection__image">
-          {% include 'responsive-image' with
-            image: product.featured_image,
-            max_width: 480,
-            max_height: 480
-          %}
-        </div>
-      {% endif %}
-
-      <p>{{ product.title | escape }}</p>
-      <span>
-        {% if product.compare_at_price > product.price %}
-          {% if product.price_varies %}
-            {%- assign sale_price = product.price | money -%}
-            {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-          {% else %}
-            {{ 'products.product.on_sale' | t }}
-            {{ product.price | money }}
+    <div class="owl-carousel owl-theme">
+      {% for product in collection.products limit: 24 %}
+        <a href="{{ product.url | within: collection }}" class="card position-relative overflow-hidden">
+          {% if product.featured_image != blank %}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 480,
+              max_height: 480,
+              class: 'card-img-top owl-lazy'
+            %}
           {% endif %}
-        {% else %}
-          {% if product.price_varies %}
-            {%- assign price = product.price | money -%}
-            {{ 'products.product.from_text_html' | t: price: price }}
-          {% else %}
-            {{ product.price | money }}
-          {% endif %}
-        {% endif %}
-      </span>
-    </a>
-  {% else %}
-    {% for i in (1..6) %}
-      <a href="#" class="featured-collection-item">
-        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
-
-        <p>{{ 'homepage.onboarding.product_title' | t }}</p>
-        <p>{{ 1999 | money }}</p>
-      </a>
-    {% endfor %}
+          <div class="card-cover"></div>
+          <div class="card-body text-center position-absolute w-100 h-100 d-flex justify-content-center flex-column align-items-center">
+            <small class="card-date text-white m-0">{{ product.title | escape }}</small>
+            <h5 class="card-title h5 text-white">{{ product.vendor | escape }}</h5>
+            <span class="icon-play mt-2">
+              <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+              </span>
+            </span>
+          </div>
+        </a>
   {% endfor %}
+  </div>
+
 </section>
 
 {% schema %}
