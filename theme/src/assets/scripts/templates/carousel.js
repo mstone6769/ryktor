@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
-import 'owl.carousel';
+window.jQuery = $;
+window.$ = $;
+require('owl.carousel');
 
 $(document).ready(() => {
   $('.owl-carousel').owlCarousel({

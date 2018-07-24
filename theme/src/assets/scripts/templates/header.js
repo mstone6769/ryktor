@@ -1,4 +1,4 @@
-import 'headroom.js';
+import Headroom from 'headroom.js/dist/headroom';
 
 // grab an element
 const header = document.querySelector(".site-header");
