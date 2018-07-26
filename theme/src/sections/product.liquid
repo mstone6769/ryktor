@@ -1,38 +1,16 @@
-<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+<div style="margin-top: 144px;" class="bg-gradient-dark" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
-  {% for image in product.images %}
-    {% capture wrapper_class %}
-      {%- unless featured_image == image -%}
-        hide
-      {%- endunless -%}
-    {% endcapture %}
-
-    {% include 'responsive-image' with
-      image: image,
-      max_width: 700,
-      max_height: 800,
-      image_attributes: "data-product-featured-image",
-      wrapper_class: wrapper_class,
-      wrapper_attributes: "data-product-image-wrapper",
-    %}
-  {% endfor %}
-
-  {% if product.images.size > 1 %}
-    <ul>
-      {% for image in product.images %}
-        <li>
-          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
-            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.vendor }}</p>
+  <div class="mx-auto max-width-4">
+    <img src="{{ featured_image.src | img_url: '1600x1600' }}" alt="{{ featured_image.alt | escape }}">
+  </div>
+  <div class="py-4 text-center">
+    <h1 class="h2 text-light">{{product.vendor | escape }}</h1>
+    <p class="pb-0">{{product.title | escape}}</p>
+    <div class="rte mx-auto max-width-4">
+      {{ product.description }}
+    </div>
 
   {% for order in customer.orders %}
     {% for line_item in order.line_items %}      
@@ -42,77 +20,8 @@
     {% endfor %}
   {% endfor %}
 
-
-  <form action="/cart/add" method="post" enctype="multipart/form-data">
-    {% unless product.has_only_default_variant %}
-      {% for option in product.options_with_values %}
-        <div class="selector-wrapper js">
-          <label for="SingleOptionSelector-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-
-          <select
-            id="SingleOptionSelector-{{ forloop.index0 }}"
-            data-single-option-selector
-            data-index="option{{ option.position }}">
-            {% for value in option.values %}
-              <option
-                value="{{ value | escape }}"
-                {% if option.selected_value == value %}selected="selected"{% endif %}>
-                  {{ value }}
-              </option>
-            {% endfor %}
-          </select>
-        </div>
-      {% endfor %}
-    {% endunless %}
-
-    <select name="id" class="no-js" data-product-select>
-      {% for variant in product.variants %}
-        <option
-          {% if variant == current_variant %}selected="selected"{% endif %}
-          {% unless variant.available %}disabled="disabled"{% endunless %}
-          value="{{ variant.id }}">
-            {{ variant.title }}
-        </option>
-      {% endfor %}
-    </select>
-
-    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-    <input type="number" id="Quantity" name="quantity" value="1" min="1">
-
-    <div data-price-wrapper>
-      <span data-product-price>
-        {{ current_variant.price | money }}
-      </span>
-
-      {% if product.compare_at_price_max > product.price %}
-        <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-        <s data-compare-price>
-          {% if current_variant.compare_at_price > current_variant.price %}
-            {{ current_variant.compare_at_price | money }}
-          {% endif %}
-        </s>
-      {% endif %}
-    </div>
-
-    <button
-      type="submit"
-      name="add"
-      data-add-to-cart
-      {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-        <span data-add-to-cart-text>
-          {% if current_variant.available %}
-            {{ 'products.product.add_to_cart' | t }}
-          {% else %}
-            {{ 'products.product.sold_out' | t }}
-          {% endif %}
-        </span>
-    </button>
-  </form>
-
-  <div class="rte">
-    {{ product.description }}
+  <div class="pb-3">
+    <a class="btn btn-primary btn-circle" href="/cart/{{ current_variant.id }}:1">Buy Now</a>
   </div>
 
   {% if section.settings.show_share_buttons %}

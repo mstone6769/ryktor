@@ -13,6 +13,10 @@ import {pageLinkFocus} from '@shopify/theme-a11y';
 import {cookiesEnabled} from '@shopify/theme-cart';
 import {wrapTable, wrapIframe} from '@shopify/theme-rte';
 
+import 'bootstrap';
+import '../templates/header.js';
+
+
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 

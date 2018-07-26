@@ -43,27 +43,57 @@
     
       <div class="collapse navbar-collapse py-3 pr-lg-4" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link px-3 text-center" href="#">Past Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3 text-center" href="#">Upcoming Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3 text-center" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-3 text-center" href="#">Contact Us</a>
-          </li>
+          {% for link in linklists[section.settings.menu].links %}
+            {% if link.links != blank %}
+              <li class="nav-item">
+                <a class="nav-link px-3 text-center" href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
+                </a>
+                <ul>
+                  {% for childlink in link.links %}
+                    <li class="nav-item">
+                      <a class="nav-link px-3 text-center" href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link px-3 text-center" href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
         </ul>
+        {% if shop.customer_accounts_enabled %}
         <ul class="navbar-nav">
-          <li class="nav-item">
-            {{ 'layout.customer.log_in' | t | customer_login_link | replace: 'href', 'class="nav-link px-3 text-center" href' }}
-          </li>
-        </ul>
-        <div class="text-center">
-          {{ 'layout.customer.create_account' | t | customer_register_link | replace: 'href', 'class="my-3 my-lg-0 btn btn-primary btn-circle" href' }}
-        </div>
+          {% if customer %}
+            <li class="nav-item d-flex text-muted align-items-center">
+              {% if customer.first_name != blank %}
+                {% capture first_name %}<a class="nav-link px-3 text-center" href="/account">{{ customer.first_name }}</a>{% endcapture %}
+                {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+              {% else %}
+                <a class="nav-link px-3 text-center" href="/account">{{ 'layout.customer.account' | t }}</a>
+              {% endif %}
+            </li>
+            <li class="nav-item">
+              {{ 'layout.customer.log_out' | t | customer_logout_link | replace: 'href', 'class="nav-link px-3 text-center" href' }}
+            </li>
+          </ul>
+          {% else %}
+            <li class="nav-item">
+              {{ 'layout.customer.log_in' | t | customer_login_link | replace: 'href', 'class="nav-link px-3 text-center" href' }}
+            </li>
+          </ul>
+          <div class="text-center">
+            {{ 'layout.customer.create_account' | t | customer_register_link | replace: 'href', 'class="my-3 my-lg-0 btn btn-primary btn-circle" href' }}
+          </div>
+          {% endif %}
+        {% endif %}
       </div>
     </nav>
   </header>
