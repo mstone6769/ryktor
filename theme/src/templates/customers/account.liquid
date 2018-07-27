@@ -1,10 +1,10 @@
-<h1>{{ 'customer.account.title' | t }}</h1>
-
-<h2>{{ 'customer.orders.title' | t }}</h2>
+<h1 class="p-5 text-light text-center" style="margin-top: 144px">{{ 'customer.account.title' | t }}</h1>
+<div class="px-5">
+<h2 class="text-light">{{ 'customer.orders.title' | t }}</h2>
 
 {% paginate customer.orders by 20 %}
   {% if customer.orders.size != 0 %}
-    <table class="responsive-table">
+    <table class="responsive-table table">
       <thead>
         <tr>
           <th>{{ 'customer.orders.order_number' | t }}</th>
@@ -36,8 +36,9 @@
 
 {% endpaginate %}
 
-<h2>{{ 'customer.account.details' | t }}</h2>
+<h2 class="mt-5 text-light">{{ 'customer.account.details' | t }}</h2>
 
 {{ customer.default_address | format_address }}
 
 <a href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+</div>

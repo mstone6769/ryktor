@@ -1,17 +1,17 @@
 {% paginate customer.addresses by 5 %}
 
-  <header role="banner">
-    <h1>{{ 'customer.account.title' | t }}</h1>
-    <button type="button" class="button address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+  <header role="banner" class="text-center">
+    <h1 class="p-5 text-light text-center" style="margin-top: 144px">{{ 'customer.account.title' | t }}</h1>
+    <button type="button" class="btn btn-circle btn-primary">{{ 'customer.addresses.add_new' | t }}</button>
   </header>
-
+<div class="px-5">
   <p>
     <a href="/account">{{ 'customer.account.return' | t }}</a>
   </p>
 
   <div id="AddressNewForm" class="hide">
     {% form 'customer_address', customer.new_address %}
-    <h2>{{ 'customer.addresses.add_new' | t }}</h2>
+    <h2 class="text-light">{{ 'customer.addresses.add_new' | t }}</h2>
 
     <label for="AddressFirstNameNew">
       {{ 'customer.addresses.first_name' | t }}
@@ -127,7 +127,7 @@
 
   </div>
 
-  <h2>{{ 'customer.addresses.title' | t }}</h2>
+  <h2 class="text-light">{{ 'customer.addresses.title' | t }}</h2>
 
   {% for address in customer.addresses %}
 
@@ -268,5 +268,5 @@
   {% if paginate.pages > 1 %}
     {% include 'pagination' %}
   {% endif %}
-
+</div>
 {% endpaginate %}
