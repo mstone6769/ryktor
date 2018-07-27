@@ -22,12 +22,7 @@
       {% for product in collection.products limit: 24 %}
         <a href="{{ product.url | within: collection }}" class="card position-relative overflow-hidden">
           {% if product.featured_image != blank %}
-            {% include 'responsive-image' with
-              image: product.featured_image,
-              max_width: 480,
-              max_height: 480,
-              class: 'card-img-top owl-lazy'
-            %}
+            <img class="card-img-top owl-lazy" data-src="{{ product.featured_image.src | img_url: '1600x1600' }}" alt="{{ product.vendor | escape }}: {{ product.title | escape }}">
           {% endif %}
           <div class="card-cover"></div>
           <div class="card-body text-center position-absolute w-100 h-100 d-flex justify-content-center flex-column align-items-center">
