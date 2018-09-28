@@ -28,10 +28,10 @@
     <div class="py-lg-3 px-3 border-top">
 
       <div class="row">
-        <div class="col-md-6"><small>Copyright &copy; 2018 Ryktor</small></div>
+        <div class="col-md-6"><small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{section.settings.copyright | link_to: '/'}}</small></div>
         <div class="col-md-6 text-right">
             <address>
-              <small>234 Oxmoor Cir Ste 211, Birmingham, AL 35209 &nbsp;&nbsp;|&nbsp;&nbsp; P: 205-555-5555 </small>
+              <small>{{section.settings.footerText}}</small>
             </address>
         </div>
       </div>
@@ -95,16 +95,16 @@
     "name": "Footer",
     "settings": [
       {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
+        "id": "copyright",
+        "type": "text",
+        "label": "Copyright",
+        "default": "Ryktor"
       },
       {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "id": "footerText",
+        "type": "text",
+        "label": "Footer text",
+        "default": "234 Oxmoor Cir Ste 211, Birmingham, AL 35209  |  P: 205-555-5555"
       }
     ]
   }

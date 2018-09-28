@@ -24,8 +24,8 @@
     </a>
     <div class="mx-auto px-3 w-100 max-width-2">
       <div class="text-white max-width-2">
-        <h1 class="display-3">be heard</h1>
-        <p class="lead lh-180">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur rutrum aliquet. Maecenas ultrices libero quis imperdiet luctus.</p>
+        <h1 class="display-3">{{section.settings.headline}}</h1>
+        <h2 class="h4 mb-3">{{section.settings.subline}}</h2>
         <button class="btn btn-primary btn-circle">Watch live</button>
       </div>
     </div>
@@ -147,6 +147,18 @@
         "type": "product",
         "id": "product",
         "label": "Product"
+      },
+      {
+        "id": "headline",
+        "type": "text",
+        "label": "Headline",
+        "default": "Be Heard"
+      },
+      {
+        "id": "subline",
+        "type": "text",
+        "label": "Subline",
+        "default": "Meet your next favorite artist"
       }
     ],
     "presets": [
