@@ -26,7 +26,9 @@
       <div class="text-white max-width-2">
         <h1 class="display-3">{{section.settings.headline}}</h1>
         <h2 class="h4 mb-3">{{section.settings.subline}}</h2>
-        <button class="btn btn-primary btn-circle">Watch live</button>
+        {% if section.settings.watchLive %}
+          <a href="{{ product.url }}" class="btn btn-primary btn-circle">Watch live</a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -159,6 +161,13 @@
         "type": "text",
         "label": "Subline",
         "default": "Meet your next favorite artist"
+      },
+      {
+        "type":      "checkbox",
+        "id":        "watchLive",
+        "label":     "Watch Live",
+        "default":   false,
+        "info":      "Turn on Watch Live Button"
       }
     ],
     "presets": [
