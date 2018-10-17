@@ -8,7 +8,8 @@
 {% endif %}
 
 <section data-section-id="{{ section.id }}" data-section-type="product">
-  <div class="d-flex flex-column flex-lg-row-reverse align-items-center">
+  <div class="d-flex flex-column flex-lg-row-reverse">
+    {% if product != empty %}
     <a href="{{ product.url }}" class="max-width-3 position-relative d-block w-100">
       {% if featured_image.src != blank %}
         <img src="{{ featured_image.src | img_url: '720x720' }}" alt="{{ featured_image.alt | escape }}">
@@ -22,11 +23,12 @@
           </span>
       </div>
     </a>
-    <div class="mx-auto px-3 w-100 max-width-2">
+    {% endif %}
+    <div class="px-3 px-lg-5 mr-auto py-lg-5 ">
       <div class="text-white max-width-2">
         <h1 class="display-3">{{section.settings.headline}}</h1>
         <h2 class="h4 mb-3">{{section.settings.subline}}</h2>
-        {% if section.settings.watchLive %}
+        {% if product.title == 'Watch Live' %}
           <a href="{{ product.url }}" class="btn btn-primary btn-circle">Watch live</a>
         {% endif %}
       </div>
@@ -161,13 +163,6 @@
         "type": "text",
         "label": "Subline",
         "default": "Meet your next favorite artist"
-      },
-      {
-        "type":      "checkbox",
-        "id":        "watchLive",
-        "label":     "Watch Live",
-        "default":   false,
-        "info":      "Turn on Watch Live Button"
       }
     ],
     "presets": [
