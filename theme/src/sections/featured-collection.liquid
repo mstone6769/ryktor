@@ -18,6 +18,7 @@
   {% endif %}
 
   {%- assign collection = collections[section.settings.collection] -%}
+    {% if collection.products.size > 1 %}
     <div class="owl-carousel owl-theme">
       {% for product in collection.products limit: 24 %}
         <a href="{{ product.url | within: collection }}" class="card position-relative overflow-hidden">
@@ -37,6 +38,7 @@
           </div>
         </a>
   {% endfor %}
+  {% endif %}
   </div>
 
 </section>

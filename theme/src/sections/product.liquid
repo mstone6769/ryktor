@@ -1,4 +1,4 @@
-<div style="margin-top: 144px;" class="bg-gradient-dark" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+<div class="bg-gradient-dark" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
   {% assign product_bought = false %}
   {% for order in customer.orders %}
     {% for line_item in order.line_items %}
@@ -12,7 +12,7 @@
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
   <div class="mx-auto max-width-4 position-relative">
     {% if product_bought == true %}
-      {% if product.title == 'Watch Live' %}
+      {% if current_variant.sku == 'LIVE' %}
       <a class="d-block" href='/pages/live'>
         <img src="{{ featured_image.src | img_url: '1600x1600' }}" alt="{{ featured_image.alt | escape }}">
         <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="top: 0; left: 0;">

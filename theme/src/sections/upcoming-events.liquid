@@ -1,0 +1,109 @@
+<section class="upcoming-events-list px-3 px-lg-5">
+  <div class="row">
+  {% for block in section.blocks %}
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-5">
+      <h3 class="h6 mb-3 text-light">{{ block.settings.date }}</h3>
+      {% if block.settings.event1BandName != blank %}
+      <div>
+        {% if block.settings.event1BandUrl != blank %}
+        <a class="text-light" href="{{ block.settings.event1BandUrl }}">{{ block.settings.event1BandName }}</a>
+        {% else %}
+        <span class="text-light">{{ block.settings.event1BandName }}</span>
+        {%  endif %}
+        <p class="text-muted">{{ block.settings.event1BandTime }}</p>
+      </div>
+      {%  endif %}
+      {% if block.settings.event2BandName != blank %}
+      <div>
+        {% if block.settings.event2BandUrl != blank %}
+        <a class="text-light" href="{{ block.settings.event2BandUrl }}">{{ block.settings.event2BandName }}</a>
+        {% else %}
+        <span class="text-light">{{ block.settings.event2BandName }}</span>
+        {%  endif %}
+        <p class="text-muted">{{ block.settings.event2BandTime }}</p>
+      </div>
+      {%  endif %}
+      {% if block.settings.event3BandName != blank %}
+      <div>
+        {% if block.settings.event3BandUrl != blank %}
+        <a class="text-light" href="{{ block.settings.event3BandUrl }}">{{ block.settings.event3BandName }}</a>
+        {% else %}
+        <span class="text-light">{{ block.settings.event3BandName }}</span>
+        {%  endif %}
+        <p class="text-muted">{{ block.settings.event3BandTime }}</p>
+      </div>
+      {%  endif %}
+  </div>
+  {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Upcoming Events",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Event",
+        "settings": [
+          {
+            "label": "Date",
+            "id": "date",
+            "type": "text"
+          },
+          {
+            "label": "Event 1 Band Name",
+            "default": "TBA",
+            "id": "event1BandName",
+            "type": "text"
+          },
+          {
+            "label": "Event 1 Band Time",
+            "default": "7:30 PM",
+            "id": "event1BandTime",
+            "type": "text"
+          },
+          {
+            "label": "Event 1 Band URL",
+            "id": "event1BandUrl",
+            "type": "url"
+          },
+          {
+            "label": "Event 2 Band Name",
+            "default": "TBA",
+            "id": "event2BandName",
+            "type": "text"
+          },
+          {
+            "label": "Event 2 Band Time",
+            "default": "8:30 PM",
+            "id": "event2BandTime",
+            "type": "text"
+          },
+          {
+            "label": "Event 2 Band URL",
+            "id": "event2BandUrl",
+            "type": "url"
+          },
+          {
+            "label": "Event 3 Band Name",
+            "default": "TBA",
+            "id": "event3BandName",
+            "type": "text"
+          },
+          {
+            "label": "Event 3 Band Time",
+            "default": "9:30 PM",
+            "id": "event3BandTime",
+            "type": "text"
+          },
+          {
+            "label": "Event 3 Band URL",
+            "id": "event3BandUrl",
+            "type": "url"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

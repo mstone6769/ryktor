@@ -1,11 +1,15 @@
-<h1 class="p-5 text-light text-center" style="margin-top: 144px">{{ 'customer.account.title' | t }}</h1>
+<h1 class="p-5 text-light text-center">{{ 'customer.account.title' | t }}</h1>
 <h2 class="text-light pb-5" style="padding-left: 2rem; padding-right: 2rem">Videos</h2>
 <section class="pb-5" style="padding-left: 2rem; padding-right: 2rem">
   <div class="row">
     {% for order in customer.orders %}
       {%- assign product = order.line_items.first.product -%}
       <div class="col-lg-4 col-sm-6" style="padding-bottom: 2rem">
+        {% if product.variants.first.sku == 'LIVE' %}
+        <a href="/pages/live" class="card position-relative overflow-hidden">
+        {% else %}
         <a href="/apps/downloads/customers/{{customer.id}}/orders/{{order.id}}/shopify_show" class="card position-relative overflow-hidden">
+        {% endif %}
           {% if product.featured_image != blank %}
             {% include 'responsive-image' with
               image: product.featured_image,

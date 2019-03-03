@@ -5,9 +5,17 @@
   }
 }
 
+#MainContent {
+  padding-top: 69px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 144px;
+  }
+}
+
 .container-fluid {
   max-width: 1200px;
 }
+
 .fluid-paragraph {
   position: relative;
   width: 680px;

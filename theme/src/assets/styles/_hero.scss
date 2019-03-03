@@ -1,5 +1,12 @@
+.template-index #MainContent {
+  padding-top: 0;
+}
+
+
 .hero {
-  padding-top: 145px;
+  padding-top: 144px;
+  min-height: 60vh;
+  padding-bottom: 84px;
   padding-bottom: 84px;
   background-position: top center;
   background-repeat: no-repeat;
@@ -8,6 +15,9 @@
   background-size: cover;
   background-attachment: fixed, scroll, fixed;
   background-blend-mode: overlay, overlay, normal;
+  @include media-breakpoint-up(lg) {
+    min-height: 0;
+  }
 }
 
 .first-section {
