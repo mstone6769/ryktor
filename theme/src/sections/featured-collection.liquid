@@ -13,12 +13,12 @@
   
   {% if section.settings.title != blank %}
     <div class="section-header">
-      <h2 class="h4 mx-5 mb-3 text-light">{{ section.settings.title | escape }}</h2>
+      <h2 class="h4 px-3 px-lg-5 mb-3 text-light">{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
 
   {%- assign collection = collections[section.settings.collection] -%}
-    {% if collection.products.size > 1 %}
+  {% if collection.products.size > 4 %}
     <div class="owl-carousel owl-theme">
       {% for product in collection.products limit: 24 %}
         <a href="{{ product.url | within: collection }}" class="card position-relative overflow-hidden">
@@ -37,9 +37,41 @@
             </span>
           </div>
         </a>
-  {% endfor %}
+      {% endfor %}
+    </div>
   {% endif %}
-  </div>
+  {% if collection.products.size > 0 and collection.products.size < 5 %}
+    <div class="px-3 px-lg-5">
+      <div class="row">
+        {% for product in collection.products limit: 24 %}
+          <div class="col-lg-4 col-sm-6" style="padding-bottom: 2rem">
+            <a href="{{ product.url | within: collection }}" class="card position-relative overflow-hidden">
+              {% if product.featured_image != blank %}
+                {% include 'responsive-image' with
+                  image: product.featured_image,
+                  max_width: 480,
+                  max_height: 480,
+                  class: 'card-img-top'
+                %}
+              {% endif %}
+              <div class="card-cover"></div>
+              <div class="card-body text-center position-absolute w-100 h-100 d-flex justify-content-center flex-column align-items-center">
+                <small class="card-date text-white m-0">{{ product.title | escape }}</small>
+                <h5 class="card-title h5 text-white">{{ product.vendor | escape }}</h5>
+                <span class="icon-play mt-2">
+                  <span class="fa-stack fa-2x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa fa-play fa-stack-1x fa-inverse"></i>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  
 
 </section>
 

@@ -136,6 +136,17 @@
     ]
   },
   {
+    "name": "Homepage",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "upcoming_shows_header_enable",
+        "label": "Enable Upcoming Shows Header",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Cart",
     "settings": [
       {

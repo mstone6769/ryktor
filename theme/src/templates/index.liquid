@@ -4,9 +4,12 @@
 <div class="first-section">
   {% section 'featured-collection' %}
 </div>
-<div class="upcoming-events">
+<section class="upcoming-events">
+  {% if settings.upcoming_shows_header_enable %}
+    <h2 class="h4 px-3 px-lg-5 mb-3 text-light">Upcoming Shows</h2>
+  {% endif %}
 {% section 'upcoming-events' %}
-</div>
+</section>
 <div class="bg-gradient-dark">
   {{ content_for_index }}
 </div>
