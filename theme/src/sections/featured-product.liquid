@@ -28,7 +28,7 @@
       <div class="text-white max-width-2">
         <h1 class="display-3">{{section.settings.headline}}</h1>
         <h2 class="h4 mb-3">{{section.settings.subline}}</h2>
-        {% if product.title == 'Watch Live' %}
+        {% if product.type == 'Live Stream' %}
           <a href="{{ product.url }}" class="btn btn-primary btn-circle">Watch live</a>
         {% endif %}
       </div>
